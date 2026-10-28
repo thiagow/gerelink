@@ -1,0 +1,11 @@
+# Package directory do site na Netlify = apps/web (definido na UI; não dá para setar aqui).
+# O runtime do Next.js (@netlify/plugin-nextjs) é instalado automaticamente: não fixar versão.
+# Variáveis de runtime (DATABASE_URL, PIX_KEY_ENCRYPTION_KEY, APP_BASE_URL) ficam na UI/CLI,
+# nunca neste arquivo: o netlify.toml não chega às funções em runtime e vai para o repositório.
+
+[build]
+  command = "pnpm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22.13.1"
